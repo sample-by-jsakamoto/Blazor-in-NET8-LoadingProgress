@@ -1,0 +1,22 @@
+﻿@if (OperatingSystem.IsBrowser())
+{
+    @ChildContent
+}
+else
+{
+    <div class="loading-container">
+        <div class="loading-content">
+            <svg class="loading-progress">
+                <circle r="40%" cx="50%" cy="50%" />
+                <circle r="40%" cx="50%" cy="50%" />
+            </svg>
+            <div class="loading-progress-text"></div>
+        </div>
+    </div>
+}
+
+@code 
+{
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}
